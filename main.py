@@ -129,6 +129,10 @@ async def main():
                         reset_game()
                 elif event.key == pygame.K_SPACE:
                     bird_velocity = jump_velocity
+            # Add mouse/touch support
+            elif event.type == pygame.MOUSEBUTTONDOWN:
+                if not game_over:
+                    bird_velocity = jump_velocity
 
         if not game_over:
             bird_velocity += gravity
